@@ -1,0 +1,13 @@
+.page {
+  background-color: #F3F3F3;
+  color: #000;
+  font-family: "Cabinet Grotesk-Bold", Helvetica, sans-serif;
+  /* look at the syntax to labeling font families */
+  font-weight: 700;
+}
+
+.page__content {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}

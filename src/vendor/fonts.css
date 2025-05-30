@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Cabinet Grotesk-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/CabinetGrotesk-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk-Regular";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/CabinetGrotesk-Regular.ttf") format("truetype");
+}

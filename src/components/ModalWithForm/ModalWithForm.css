@@ -1,0 +1,123 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__content {
+  background-color: #FFF;
+  position: relative;
+  padding: 28px 28px 36px;
+  border-radius: 20px;
+  max-width: 496px;
+  height: 436px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__title {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__input {
+  display: block;
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 8px 0 24px;
+  padding: 0px;
+}
+
+.modal__radio-buttons {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__legend {
+  margin: 0 0 12px;
+}
+
+.modal__label_type_radio {
+  margin: 0 0 8px;
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.modal__radio-input {
+  margin: 0 8px 0 0;
+}
+
+input[type="radio"]:checked {
+  accent-color: rgba(0, 0, 0, 1);
+}
+
+.modal__submit {
+  width: 124px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 4px;
+  border: none;
+  position: absolute;
+  left: 28px;
+  bottom: 36px;
+  cursor: pointer;
+}
+
+/* @media screen and (max-width: 770px) {
+  .modal__content {
+    min-width: 375px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal__content {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 12px 12px;
+    min-width: 375px;
+    height: 455px;
+  }
+
+  .modal__submit {
+    width: 100%;
+    min-width: 343px;
+    height: 44px;
+  }
+} */
