@@ -1,0 +1,36 @@
+.clothes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.clothes-section__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.clothes-section__text {
+  font-size: 20px;
+  padding: 0px;
+  margin: 16px 0 0;
+}
+
+.clothes-section__button {
+  color: rgba(0, 0, 0, 0.6);
+  width: 88px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 16px 0 0;
+}
+
+.clothes-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 0px;
+  gap: 21px;
+  list-style-type: none;
+}

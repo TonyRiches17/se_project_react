@@ -1,8 +1,7 @@
 .page {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   color: #000;
   font-family: "Cabinet Grotesk-Bold", Helvetica, sans-serif;
-  /* look at the syntax to labeling font families */
   font-weight: 700;
 }
 

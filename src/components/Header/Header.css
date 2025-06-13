@@ -9,18 +9,23 @@
 }
 
 .header__date-location {
-  margin: 0;
+  margin: 0 auto 0 0;
   font-size: 20px;
   line-height: 24px;
 }
 
 .header__add-clothes-button {
-  margin: 0 20px 0 auto;
+  margin: 0 20px 0 0;
   font-size: 20px;
   line-height: 24px;
   border: none;
   cursor: pointer;
   background-color: transparent;
+}
+
+.header__profile-link {
+  text-decoration: none;
+  color: #000;
 }
 
 .header__user-container {

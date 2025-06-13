@@ -16,7 +16,7 @@
 }
 
 .modal__content {
-  background-color: #FFF;
+  background-color: #fff;
   position: relative;
   padding: 28px 28px 36px;
   border-radius: 20px;
@@ -74,7 +74,7 @@
 
 .modal__label_type_radio {
   margin: 0 0 8px;
-  color:rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .modal__radio-input {
@@ -88,8 +88,8 @@ input[type="radio"]:checked {
 .modal__submit {
   width: 124px;
   height: 36px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #FFF;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
   font-size: 16px;
   line-height: 20px;
   border-radius: 4px;
@@ -98,6 +98,29 @@ input[type="radio"]:checked {
   left: 28px;
   bottom: 36px;
   cursor: pointer;
+}
+
+.modal__submit:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__submit_disabled {
+  width: 124px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 4px;
+  border: none;
+  position: absolute;
+  left: 28px;
+  bottom: 36px;
+  cursor: pointer;
+}
+
+.modal__submit_disabled:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* @media screen and (max-width: 770px) {

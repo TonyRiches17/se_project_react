@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import "./WeatherCard.css";
 import {
   weatherOptions,
   defaultWeatherOptions,
 } from "../../../utils/constants.js";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
 function WeatherCard({ weatherData }) {
   const filteredOptions = weatherOptions.filter((option) => {
@@ -20,10 +22,18 @@ function WeatherCard({ weatherData }) {
   }
 
   const defaultAltText = weatherData.isDay ? "day" : "night";
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   return (
     <section className="weather-card">
-      <p className="weather-card__temp">{weatherData.temp.F}&deg; F</p>
+      <p className="weather-card__temp">
+        {`${
+          currentTemperatureUnit === "F"
+            ? weatherData.temp.F
+            : weatherData.temp.C
+        }`}
+        &deg; {currentTemperatureUnit}
+      </p>
       <img
         src={weatherOption?.url}
         alt={`Background picture of a day that represents ${

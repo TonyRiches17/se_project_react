@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is has the make up of a social media website, that enables you to upload a profile picture with accompanying bio information. You can upload pictures and solicit likes below them.
+This project is a website designed to give the user suggestions on what to wear, given the temperature and weather of your current location. It is filtered by weather, and has a profile and a main page for viewing, adding, and deleting clothing items.
 
 ### Technologies Used
 
@@ -12,14 +12,13 @@ This project is has the make up of a social media website, that enables you to u
 * Flexbox
 * React
 * Vite
-* Responsive Design  
 * Figma
 
 ---
 
-<img src="./src/assets/ReadMe pics/htmlandcss.png" alt="Picture of HTML and CSS logos" width="100" height="50"> **HTML, CSS, Flexbox, Gridbox**
-  
-This project was made utilizing a combination of coding with all of these principles. Using the "Grid" elements were a new process that proved challenging but necessary and rewarding in the end.  
+<img src="./src/assets/ReadMe pics/htmlandcss.png" alt="Picture of HTML and CSS logos" width="100" height="50"> **HTML, CSS, Flexbox**
+
+This project utilized HTML as well as CSS to style the elements.
 
 <img src="./src/assets/ReadMe pics/java.png" alt="Picture of JavaScript logo" width="50" height="50"> **JavaScript**
 
@@ -32,11 +31,6 @@ This project was made utilizing React. Several functions and variables were used
 <img src="./src/assets/ReadMe pics/vite.png" alt="Picture of Vite logo" width="80" height="50"> **Vite**
 
 Vite was utilized for the first time, to assist React and all of it's configurations.
-
-
-**Responsive Design**
-
-This project contains an optional functionality of the website at all resolutions to include more than 1400 pixels all the way down and adaptive to a screen size of 320 pixels.
   
 <img src="./src/assets/ReadMe pics/figma.png" alt="Picture of Figma logo" width="50" height="50"> **Figma**
 
