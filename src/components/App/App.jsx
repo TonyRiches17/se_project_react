@@ -11,7 +11,7 @@ import {
   APIkey,
   defaultClothingItems,
 } from "../../utils/constants.js";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
+import CurrentTemperatureUnitContext from "../../utils/contexts/CurrentTemperatureUnitContext.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import Profile from "../Profile/Profile.jsx";
 import { getItems, removeItems, addItems } from "../../utils/api.js";
