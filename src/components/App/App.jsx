@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
@@ -55,11 +55,14 @@ function App() {
       });
   };
 
+  const handleResetForm = useRef(null);
+
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const itemsToAdd = { name, imageUrl, weather };
     addItems(itemsToAdd)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
+        handleResetForm.current();
         closeActiveModal();
       })
       .catch((error) => {
@@ -121,6 +124,7 @@ function App() {
           isOpen={activeModal === "add-garment"}
           activeModal={activeModal}
           onAddItemModalSubmit={handleAddItemModalSubmit}
+          onResetForm={handleResetForm}
         />
         <ItemModal
           activeModal={activeModal}
