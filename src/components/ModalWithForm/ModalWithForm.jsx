@@ -5,6 +5,9 @@ function ModalWithForm({
   children,
   title,
   buttonText,
+  additionalText,
+  contentStyle,
+  buttonStyle,
   isOpen,
   onClose,
   onSubmit,
@@ -12,7 +15,7 @@ function ModalWithForm({
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
-      <div className="modal__content">
+      <div className="modal__content" style={contentStyle}>
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
           <img
@@ -23,12 +26,16 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          <button
-            type="submit"
-            className={!isValid ? "modal__submit_disabled" : "modal__submit"}
-          >
-            {buttonText}
-          </button>
+          <div className="modal__submit-container">
+            <button
+              type="submit"
+              className={!isValid ? "modal__submit_disabled" : "modal__submit"}
+              style={buttonStyle}
+            >
+              {buttonText}
+            </button>
+            <div className="modal__additional-text">{additionalText}</div>
+          </div>
         </form>
       </div>
     </div>

@@ -38,6 +38,7 @@ export default function AddItemModal({
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onAddItemModalSubmit({ name, imageUrl, weather });
+    resetForm();
   };
 
   const isFormValid = name && imageUrl && weather;
@@ -46,6 +47,7 @@ export default function AddItemModal({
     <ModalWithForm
       title="New garment"
       buttonText="Add garment"
+      contentStyle={{ "--modal-min-height": "436px" }}
       activeModal={activeModal}
       onClose={onClose}
       isOpen={isOpen}

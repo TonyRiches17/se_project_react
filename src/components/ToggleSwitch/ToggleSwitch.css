@@ -9,6 +9,19 @@
   position: relative;
 }
 
+.toggle-switch-loggedout {
+  width: 56px;
+  height: 28px;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+  margin: 0 0 0 40px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 48px;
+  right: 220px;
+}
+
 .toggle-switch__checkbox {
   opacity: 0;
   height: 0;
