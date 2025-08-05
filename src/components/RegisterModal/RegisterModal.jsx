@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function RegisterModal({
@@ -8,6 +7,7 @@ function RegisterModal({
   isOpen,
   onSignUpSubmit,
   activeModal,
+  handleSignInClick,
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,7 +39,7 @@ function RegisterModal({
 
   useEffect(() => {
     onResetForm.current = resetForm;
-  }, []);
+  }, [onResetForm]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -52,7 +52,15 @@ function RegisterModal({
     <ModalWithForm
       title="Sign Up"
       buttonText="Sign Up"
-      additionalText="or Log In"
+      additionalText={
+        <button
+          type="button"
+          className="modal__link"
+          onClick={handleSignInClick}
+        >
+          or Log In
+        </button>
+      }
       contentStyle={{ "--modal-min-height": "456px" }}
       buttonStyle={{ "--submit-width": "86px" }}
       activeModal={activeModal}

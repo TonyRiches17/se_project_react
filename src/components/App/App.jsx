@@ -103,10 +103,16 @@ function App() {
   const handleSignUpSubmit = ({ name, avatar, email, password }) => {
     signUp(name, avatar, email, password)
       .then((data) => {
+        localStorage.setItem("jwt", data.token);
+        console.log("Full response:", data);
+        return getUserData(data.token);
+      })
+      .then((userData) => {
+        setCurrentUser(userData);
         setIsLoggedIn(true);
-        setUserData(data);
-        navigate("/profile");
+        setUserData(userData);
         handleResetForm.current();
+        navigate("/profile");
         closeActiveModal();
       })
       .catch((error) => {
@@ -118,13 +124,15 @@ function App() {
     signIn(email, password)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
+        console.log("Full response:", data);
+
         return getUserData(data.token);
       })
       .then((userData) => {
         setCurrentUser(userData);
         setIsLoggedIn(true);
-        navigate("/");
         handleResetForm.current();
+        navigate("/");
         closeActiveModal();
       })
       .catch((error) => {
@@ -263,6 +271,7 @@ function App() {
             isOpen={activeModal === "sign-up"}
             onSignUpSubmit={handleSignUpSubmit}
             activeModal={activeModal}
+            handleSignInClick={handleSignInClick}
           />
           <LoginModal
             onClose={closeActiveModal}
@@ -270,6 +279,7 @@ function App() {
             isOpen={activeModal === "sign-in"}
             onSignInSubmit={handleSignInSubmit}
             activeModal={activeModal}
+            handleSignUpClick={handleSignUpClick}
           />
           <EditProfileModal
             onClose={closeActiveModal}

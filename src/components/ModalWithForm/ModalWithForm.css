@@ -90,6 +90,7 @@ input[type="radio"]:checked {
   align-items: center;
   position: absolute;
   bottom: 34px;
+  gap: 12px;
 }
 
 .modal__submit {
@@ -124,16 +125,13 @@ input[type="radio"]:checked {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal__additional-text {
-  width: 80px;
-  height: 40px;
-  font-size: 16px;
-  line-height: 20px;
+.modal__link {
+  border: none;
   color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
+  width: max-content;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
 }
 
 /* @media screen and (max-width: 770px) {

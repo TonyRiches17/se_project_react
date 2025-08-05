@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 export default function AddItemModal({
@@ -17,7 +16,7 @@ export default function AddItemModal({
     setName(evt.target.value);
   };
 
-  const handleimageUrlChange = (evt) => {
+  const handleImageUrlChange = (evt) => {
     setImageUrl(evt.target.value);
   };
 
@@ -74,7 +73,7 @@ export default function AddItemModal({
           className="modal__input"
           placeholder="Image URL"
           required
-          onChange={handleimageUrlChange}
+          onChange={handleImageUrlChange}
           value={imageUrl}
         />
       </label>

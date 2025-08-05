@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function LoginModal({
@@ -8,6 +7,7 @@ function LoginModal({
   isOpen,
   onSignInSubmit,
   activeModal,
+  handleSignUpClick,
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +40,15 @@ function LoginModal({
     <ModalWithForm
       title="Log In"
       buttonText="Log In"
-      additionalText="or Sign Up"
+      additionalText={
+        <button
+          type="button"
+          className="modal__link"
+          onClick={handleSignUpClick}
+        >
+          or Sign Up
+        </button>
+      }
       contentStyle={{ "--modal-min-height": "304px" }}
       buttonStyle={{ "--submit-width": "73px" }}
       activeModal={activeModal}
