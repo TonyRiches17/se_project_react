@@ -22,7 +22,9 @@ function ItemCard({ item, onCardClick, onCardLike }) {
       <div className="card__name-container">
         <h2 className="card__name">{item.name}</h2>
         <img
-          className="card__like-icon"
+          className={
+            currentUser._id ? "card__like-icon" : "card__like-icon_hidden"
+          }
           src={isLiked ? liked : unliked}
           alt={isLiked ? "Unlike" : "Like"}
           onClick={handleLike}

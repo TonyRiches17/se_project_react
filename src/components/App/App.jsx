@@ -40,6 +40,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isCheckingToken, setIsCheckingToken] = useState(true);
   const [userData, setUserData] = useState({});
   const [currentUser, setCurrentUser] = useState({});
 
@@ -89,7 +90,8 @@ function App() {
     const itemsToAdd = { name, imageUrl, weather };
     addItems(itemsToAdd)
       .then((item) => {
-        setClothingItems([item.data, ...clothingItems]);
+        console.log(item);
+        setClothingItems((prev) => [item, ...prev]);
         handleResetForm.current();
         closeActiveModal();
       })
@@ -104,7 +106,6 @@ function App() {
     signUp(name, avatar, email, password)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
-        console.log("Full response:", data);
         return getUserData(data.token);
       })
       .then((userData) => {
@@ -124,8 +125,6 @@ function App() {
     signIn(email, password)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
-        console.log("Full response:", data);
-
         return getUserData(data.token);
       })
       .then((userData) => {
@@ -199,15 +198,23 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
-    if(!token) {
+
+    if (!token) {
+      setIsCheckingToken(false);
       return;
     }
+
     getUserData(token)
       .then((user) => {
         setCurrentUser(user);
         setIsLoggedIn(true);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error("Token validation failed:", err);
+      })
+      .finally(() => {
+        setIsCheckingToken(false);
+      });
   }, []);
 
   return (
@@ -239,7 +246,10 @@ function App() {
               <Route
                 path="/profile"
                 element={
-                  <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <ProtectedRoute
+                    isLoggedIn={isLoggedIn}
+                    isCheckingToken={isCheckingToken}
+                  >
                     <Profile
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}

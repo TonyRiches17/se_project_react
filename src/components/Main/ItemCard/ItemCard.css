@@ -34,6 +34,10 @@
   height: 15px;
 }
 
+.card__like-icon_hidden {
+  display: none;
+}
+
 .card__image {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
