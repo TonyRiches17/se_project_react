@@ -32,7 +32,7 @@ export default function AddItemModal({
 
   useEffect(() => {
     onResetForm.current = resetForm;
-  }, []);
+  }, [onResetForm]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

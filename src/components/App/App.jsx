@@ -89,9 +89,9 @@ function App() {
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const itemsToAdd = { name, imageUrl, weather };
     addItems(itemsToAdd)
-      .then((item) => {
-        console.log(item);
-        setClothingItems((prev) => [item, ...prev]);
+      .then((response) => {
+        const newItem = response.data || response;
+        setClothingItems((prev) => [newItem, ...prev]);
         handleResetForm.current();
         closeActiveModal();
       })
@@ -104,6 +104,9 @@ function App() {
 
   const handleSignUpSubmit = ({ name, avatar, email, password }) => {
     signUp(name, avatar, email, password)
+      .then((user) => {
+        return signIn(email, password);
+      })
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         return getUserData(data.token);
@@ -111,9 +114,8 @@ function App() {
       .then((userData) => {
         setCurrentUser(userData);
         setIsLoggedIn(true);
-        setUserData(userData);
         handleResetForm.current();
-        navigate("/profile");
+        navigate("/");
         closeActiveModal();
       })
       .catch((error) => {

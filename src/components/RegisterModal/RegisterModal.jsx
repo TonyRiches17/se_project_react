@@ -44,6 +44,7 @@ function RegisterModal({
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onSignUpSubmit({ email, password, name, avatar });
+    resetForm();
   };
 
   const isFormValid = email && password && name && avatar;
