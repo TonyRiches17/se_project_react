@@ -115,3 +115,9 @@ export const coordinates = {
 };
 
 export const APIkey = "65f3784017ded660b285f09b0fe56a3b";
+
+const baseUrl = process.env.NODE_ENV === "production"
+  ? "https://api.what2wear.minecraftnoob.com"
+  : "http://localhost:3001";
+
+  export { baseUrl };
